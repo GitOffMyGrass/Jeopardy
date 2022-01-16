@@ -17,7 +17,7 @@ This copyright notice must be retained with any use
 of source code from this file.
 """
 from decimal import Decimal
-
+import six
 
 def chunker(sequence, size, overlap=False):
     """
@@ -68,7 +68,7 @@ def get_first_textline(path, ignore=None):
     """
     retLine = ''
 
-    if isinstance(ignore, basestring):
+    if isinstance(ignore, six.string_types):
         ignore = (ignore,)
 
     if not ignore:

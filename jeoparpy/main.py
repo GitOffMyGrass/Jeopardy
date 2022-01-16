@@ -23,10 +23,10 @@ from pygame.locals import *
 import os
 import sys
 
-from config import FPS_LIMIT, FULLSCREEN, SUBTRACT_ON_INCORRECT, SCREEN_SIZE
-from constants import ANIMATIONEND, ANSWER_TIMEOUT, AUDIOEND, SKIP_INTRO_FLAG
-from game import GameData, JeopGameState
-from ui import Controller, do_congrats, do_credits, do_intro, do_scroll
+from jeoparpy.config import FPS_LIMIT, FULLSCREEN, SUBTRACT_ON_INCORRECT, SCREEN_SIZE
+from jeoparpy.constants import ANIMATIONEND, ANSWER_TIMEOUT, AUDIOEND, SKIP_INTRO_FLAG
+from jeoparpy.game import GameData, JeopGameState
+from jeoparpy.ui import Controller, do_congrats, do_credits, do_intro, do_scroll
 import button
 
 EVENTS_ALLOWED = (ANIMATIONEND, ANSWER_TIMEOUT,

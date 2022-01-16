@@ -19,13 +19,14 @@ This copyright notice must be retained with any use
 of source code from this file..
 """
 from sys import exit as sysexit
+import six
 
 import pygame
 from pygame.locals import QUIT, KEYDOWN, K_q
 
-from constants import JEOP_BLUE
-from resmaps import FONTS, IMAGES
-from util import get_anim_data, scale, shadow_text
+from jeoparpy.ui.constants import JEOP_BLUE
+from jeoparpy.ui.resmaps import FONTS, IMAGES
+from jeoparpy.ui.util import get_anim_data, scale, shadow_text
 
 ###############################################################################
 class CreditLine(pygame.sprite.DirtySprite):
@@ -97,9 +98,9 @@ class MultiCreditLine(CreditLine):
         a single line.
         """
         super(MultiCreditLine, self).__init__(*groups)
-        if isinstance(position, basestring):
+        if isinstance(position, six.string_types):
             position = (position, )
-        if isinstance(name, basestring):
+        if isinstance(name, six.string_types):
             name = (name, )
         
         self.image = self._create_line(width, font, position, name)
@@ -225,7 +226,7 @@ def do_credits(screen, clock, audioPlayer, fpsLimit):
     
     pygame.event.clear()
     audioPlayer.play('end')
-    _scroll_credits(screen, scrRect, clock, lines, numFrames, step, fpsLimit)
+    _scroll_credits(screen, scrRect, clock, lines, int(numFrames), step, fpsLimit)
 
     _blit_thanks(screen, 'Thanks for playing!', font, scrRect, lineW)
     pygame.time.delay(5000)
@@ -281,7 +282,7 @@ def _scroll_credits(screen, scrRect, clock, lines, numFrames, step, fpsLimit):
     screen.fill(JEOP_BLUE)
     bg = screen.copy()
     
-    for frame in xrange(numFrames):
+    for frame in range(numFrames):
         lines.update(step, scrRect.h)
         lines.clear(screen, bg)
         lines.draw(screen)

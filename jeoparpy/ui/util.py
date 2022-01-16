@@ -13,6 +13,7 @@ This copyright notice must be retained with any use
 of source code from this file.
 """
 import sys
+import six
 
 import pygame
 from pygame.locals import *
@@ -190,7 +191,7 @@ def get_anim_data(goalTime, distance, globalFPSLimit):
         step = -step
         
     numFrames = distance / step
-
+    
     return numFrames, step, int(round(numFrames / goalTime))
     
 def get_size_textblock(lines, font, spacing):
@@ -201,7 +202,7 @@ def get_size_textblock(lines, font, spacing):
     blockW = 0
     blockH = 0
 
-    if isinstance(lines, basestring):
+    if isinstance(lines, six.string_types):
         lines = [lines]
 
     for line in lines:
@@ -332,7 +333,7 @@ class BorderedBox(pygame.Surface):
             val = 4*[val]
 
         try:
-            for i in xrange(4):
+            for i in range(4):
                 ws.append(to_numeric(val[i]))
         except IndexError:
             raise BorderError("'borderW' contains ")

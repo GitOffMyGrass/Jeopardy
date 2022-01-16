@@ -59,11 +59,11 @@ FPS_LIMIT = 100
 #
 # If the value is 0, negative, or None, the timer will be disabled for the
 # entire game.
-CLUE_TIMEOUT_MS = 20000
+CLUE_TIMEOUT_MS = 0
 
 # This is the time in miliseconds that players have to answer a clue
 # after buzzing in. This field must be a positive integer.
-ANSWER_TIME_MS = 5000
+ANSWER_TIME_MS = 30000
 
 # If this is set to True, money is taken away when a player answers
 # incorrectly. If set to False, money remains the same on a wrong answer.

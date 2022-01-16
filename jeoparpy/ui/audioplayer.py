@@ -1,6 +1,6 @@
 import pygame
 
-from resmaps import SOUNDS, CLUE_READS
+from jeoparpy.ui.resmaps import SOUNDS, CLUE_READS
 
 ###############################################################################
 class AudioPlayer(object):

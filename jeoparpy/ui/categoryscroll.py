@@ -20,10 +20,10 @@ of source code from this file.
 
 import pygame
 
-from config import CATEGORY_HOLD_TIME
-from constants import JEOP_BLUE
-from resmaps import FONTS
-from util import (autofit_text, BorderedBox, draw_centered_textblock,
+from jeoparpy.ui.config import CATEGORY_HOLD_TIME
+from jeoparpy.ui.constants import JEOP_BLUE
+from jeoparpy.ui.resmaps import FONTS
+from jeoparpy.ui.util import (autofit_text, BorderedBox, draw_centered_textblock,
                   get_anim_data, shadow_text)
 from ..config import FPS_LIMIT
 from ..util import chunker
