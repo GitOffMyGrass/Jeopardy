@@ -47,20 +47,11 @@ self.right_button = 24
 
 ### Software Setup
 
-1.  Clone this project
+Clone this project, change to the source directory, and launch.
 
 ```sh
 git clone https://github.com/GitOffMyGrass/jeopardy.git
-
-```
-
-2.  Change to the source directory
-```sh
 cd jeopardy
-```
-
-3.  Launch the application
-```sh
 python start.py
 ```
 
